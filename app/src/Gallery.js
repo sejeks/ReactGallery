@@ -1,73 +1,54 @@
 import React from "react";
-import PropTypes from "prop-types";
-//asdsds
-
-function imagesLoaded(parentNode) {
-    const imgElements = [...parentNode.querySelectorAll("img")];
-    for (let i = 0; i < imgElements.length; i += 1) {
-        const img = imgElements[i];
-        if (!img.complete) {
-            return false;
-        }
-    }
-    return true;
-}
+import $ from "jquery";
 
 class Gallery extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            loading: true
-        };
+    constructor(){
+        super();
+        this.state = {urls: []};
+        console.log("constructor");
     }
 
     componentDidMount() {
-        console.log('GrandChild did mount.');
-    }
-
-    handleImageChange = () => {
-        this.setState({
-            loading: !imagesLoaded(this.galleryElement)
-        });
-    };
-
-    renderSpinner() {
-        if (!this.state.loading) {
-            return null;
-        }
-        return <span className="spinner" />;
+        console.log("componentDidMount 1");
+        $.ajax({
+            url: "https://api.vk.com/method/photos.getAll?owner_id=40519043&count=20&access_token=4c288afa12d1dfbdff6c4a8b6e2adc73cda49fefd0fe87643c8837ee0699deea90dcf5fd8717d12b643d7&v=5.52",
+            method: 'GET',
+            dataType: 'JSONP'
+        }).done((data) => {
+            let urlsArray;
+            const dataArray= data.response.items;
+            for (let i = 0; i < dataArray.length; i++){
+                urlsArray[i] = dataArray[i].photo_130;
+            }
+            this.setState({urls:urlsArray});
+            console.log(this.state);
+            console.log("componentDidMount 2");
+        })
     }
 
     renderImage(imageUrl) {
         return (
             <div>
-                <img
-                    src={imageUrl}
-                    onLoad={this.handleImageChange}
-                    onError={this.handleImageChange}
-                />
+                <img src={imageUrl} />
             </div>
         );
     }
 
-    render() {
+    get gallery() {
         return (
-            <div
-                className="gallery"
-                ref={element => {
-                    this.galleryElement = element;
-                }}
-            >
-                {this.renderSpinner()}
+            <div className="gallery">
                 <div className="images">
                     {this.props.imageUrls.map(imageUrl => this.renderImage(imageUrl))}
                 </div>
             </div>
         );
     }
+
+    render() {
+        return this.state.urls.length ? this.gallery : null;
+    }
 }
 Gallery.propTypes = {
-    imageUrls: PropTypes.arrayOf(PropTypes.string).isRequired
+    imageUrls: React.PropTypes.arrayOf(React.PropTypes.string).isRequired
 };
 export default Gallery;
-// asdsa

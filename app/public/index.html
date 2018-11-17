@@ -7,24 +7,8 @@
 </head>
 
 <body>
-<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
 <!--4c288afa12d1dfbdff6c4a8b6e2adc73cda49fefd0fe87643c8837ee0699deea90dcf5fd8717d12b643d7-->
 
-<script>
-    urls = [];
-    $.ajax({
-        url: "https://api.vk.com/method/photos.getAll?owner_id=40519043&count=20&access_token=4c288afa12d1dfbdff6c4a8b6e2adc73cda49fefd0fe87643c8837ee0699deea90dcf5fd8717d12b643d7&v=5.52",
-        method: 'GET',
-        dataType: 'JSONP',
-        success: function (data) {
-            const dataArray= data.response.items;
-            for (let i = 0; i < dataArray.length; i++){
-                urls[i] = dataArray[i].photo_130;
-            }
-            console.log(urls);
-        }
-    });
-</script>
 <div id="root"></div>
 </body>
 </html>
