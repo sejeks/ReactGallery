@@ -6,9 +6,30 @@ body {
   sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
   monospace;
+}
+
+.gallery {
+  width: 100%; /* ширина блока-контейнера */
+  max-width: 960px; /* максимальная ширина контейнера */
+  margin: 0 auto; /* этот стиль центрирует контейнер */
+}
+.images {
+  float: left; /* говорим элементам выстраиваться один за другим */
+   /* устанавливаем ширину элемента */
+  padding: 10px; /* добавляем отступы с каждой стороны */
+  box-sizing: border-box; /* меняем способ вычисления ширины */
+}
+
+.images img {
+  display: block;
+  max-width: 100%;
+  width: 300px;
+  height: auto;
 }
