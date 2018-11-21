@@ -12,7 +12,7 @@ class Gallery extends React.Component {
     componentDidMount() {
         console.log("componentDidMount 1");
         $.ajax({
-            url: "https://api.vk.com/method/photos.getAll?owner_id=40519043&count=60&access_token=f5424ccc72c0f4b7497cc7b370050e2c131ef17a9aab98078afcc1377f3a6210528e3cf61fda0288bb991&v=5.52",
+            url: "https://api.vk.com/method/photos.getAll?owner_id=40519043&count=60&access_token=feedf922f2eb2dab1a2660f5502116a355a6e753ec2740235163b7d92e10d73f214f3f0f56b46bc24578d&v=5.52",
             method: 'GET',
             dataType: 'JSONP'
         }).done((data) => {

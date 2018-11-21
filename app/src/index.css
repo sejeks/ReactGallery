@@ -6,7 +6,6 @@ body {
   sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
 }
 
 
@@ -16,20 +15,30 @@ code {
 }
 
 .gallery {
-  width: 100%; /* ширина блока-контейнера */
-  max-width: 960px; /* максимальная ширина контейнера */
-  margin: 0 auto; /* этот стиль центрирует контейнер */
+  width: 100%;
+  margin: auto;
+  padding: 10px;
+  display: flex;
+
+
 }
 .images {
-  float: left; /* говорим элементам выстраиваться один за другим */
-   /* устанавливаем ширину элемента */
-  padding: 10px; /* добавляем отступы с каждой стороны */
-  box-sizing: border-box; /* меняем способ вычисления ширины */
+  float: left;
+  box-sizing: border-box;
+  padding: 10px;
+  width: 300px;
+  height: 400px;
+  background-color: #7ba6af;
+  align-items: center;
+  display: flex;
+  margin: 20px;
 }
 
 .images img {
   display: block;
+  max-height: 100%;
   max-width: 100%;
-  width: 300px;
   height: auto;
+  margin: auto;
+  cursor: pointer;
 }
