@@ -17,7 +17,7 @@ class Gallery extends React.Component {
             dataType: 'JSONP'
         }).done((data) => {
             let urlsArray = [];
-            const dataArray= data.response.items;
+            const dataArray = data.response.items;
             for (let i = 0; i < dataArray.length; i++){
                 urlsArray[i] = dataArray[i].photo_604;
             }
@@ -29,10 +29,11 @@ class Gallery extends React.Component {
         })
     }
 
-    renderImage(imageUrl) {
+    renderImage(imageUrl, index) {
+        console.log(index);
         return (
-            <div className="images">
-                <img src={imageUrl} key={imageUrl.index}/>
+            <div className="images" key={"img" + index}>
+                <img src={imageUrl} />
             </div>
         );
     }
@@ -40,9 +41,7 @@ class Gallery extends React.Component {
     get gallery() {
         return (
             <div className="gallery">
-                <div>
-                    {this.state.urls.map(imageUrl => this.renderImage(imageUrl))}
-                </div>
+                    {this.state.urls.map((imageUrl, index) => this.renderImage(imageUrl, index))}
             </div>
         );
     }
