@@ -1,6 +1,8 @@
 import React from "react";
 import $ from "jquery";
 import './index.css';
+import './Image';
+import Image from "./Image";
 
 class Gallery extends React.Component {
     constructor(){
@@ -29,19 +31,11 @@ class Gallery extends React.Component {
         })
     }
 
-    renderImage(imageUrl, index) {
-        console.log(index);
-        return (
-            <div className="images" key={"img" + index}>
-                <img src={imageUrl} />
-            </div>
-        );
-    }
 
     get gallery() {
         return (
             <div className="gallery">
-                    {this.state.urls.map((imageUrl, index) => this.renderImage(imageUrl, index))}
+                    {this.state.urls.map((imageUrl, index) => <Image imageUrl={imageUrl} key={'img' + index}/>)}
             </div>
         );
     }
@@ -50,7 +44,5 @@ class Gallery extends React.Component {
         return this.state.urls.length ? this.gallery : null;
     }
 }
-// Gallery.propTypes = {
-//     imageUrls: React.PropTypes.arrayOf(React.PropTypes.string).isRequired
-// };
+
 export default Gallery;
