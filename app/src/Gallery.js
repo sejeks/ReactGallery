@@ -3,12 +3,14 @@ import $ from "jquery";
 import './index.css';
 import './Image';
 import Image from "./Image";
+import Popup from "./Popup";
 
 class Gallery extends React.Component {
     constructor(){
         super();
         this.state = {urls: []};
         console.log("constructor");
+        this.popup = {object: null};
     }
 
     componentDidMount() {
@@ -35,7 +37,8 @@ class Gallery extends React.Component {
     get gallery() {
         return (
             <div className="gallery">
-                    {this.state.urls.map((imageUrl, index) => <Image imageUrl={imageUrl} key={'img' + index}/>)}
+                    {this.state.urls.map((imageUrl, index) => <Image imageUrl={imageUrl} key={'img' + index} popup={this.popup}/>)}
+                    <Popup ref={(elem) => this.popup.object = elem} />
             </div>
         );
     }
