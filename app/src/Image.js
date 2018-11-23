@@ -9,8 +9,8 @@ class Image extends React.Component {
 
     get image() {
         return (
-            <div className="images" key={"img" + this.props.index}>
-                <img src={this.props.imageUrl} onClick={() => this.props.popup.object.show(this.props.imageUrl)}/>
+            <div className="images" key={"img" + this.props.index} onClick={() => this.props.popup.object.show(this.props.imageUrl)}>
+                <img src={this.props.imageUrl}/>
             </div>
         );
     }

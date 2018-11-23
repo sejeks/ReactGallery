@@ -25,8 +25,8 @@ class Popup extends React.Component {
 
     get popup() {
         return (
-            <div className="popup">
-                <img src={this.state.url} onClick={this.hide}/>
+            <div className="popup" onClick={this.hide}>
+                <img src={this.state.url}/>
             </div>
         );
     }

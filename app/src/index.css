@@ -6,6 +6,8 @@ body {
   sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-width: 800px;
+  min-height: auto;
 }
 
 
@@ -32,6 +34,9 @@ code {
   align-items: center;
   display: flex;
   margin: 20px;
+  min-width: 300px;
+  min-height: 400px;
+  cursor: pointer;
 }
 
 .images img {
@@ -63,4 +68,10 @@ code {
   height: 80%;
   background-color: #7ba6af;
   margin: 20px;
+}
+
+img {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
 }
