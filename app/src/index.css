@@ -7,7 +7,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-width: 800px;
-  min-height: auto;
+  background-color: rgb(24, 27, 32);
 }
 
 
@@ -27,19 +27,21 @@ code {
 }
 .images {
   box-sizing: border-box;
-  padding: 10px;
+  border-radius: 1%;
   width: 300px;
   height: 400px;
-  background-color: #7ba6af;
+  background-color: rgb(24, 27, 32);
   align-items: center;
   display: flex;
   margin: 20px;
   min-width: 300px;
   min-height: 400px;
   cursor: pointer;
+  border: solid rgb(115, 91, 43) 4px;
 }
 
 .images img {
+  border-radius: 1%;
   display: block;
   max-height: 100%;
   max-width: 100%;
@@ -49,7 +51,7 @@ code {
 }
 
 .popup {
-  background: rgba(66, 83, 90, 0.6);
+  background: rgba(115, 91, 43, 0.6);
   position: fixed;
   top: 0;
   left: 0;
@@ -63,15 +65,13 @@ code {
 
 .popup img {
   box-sizing: border-box;
-  padding: 10px;
+  border-radius: 1%;
+  padding: 5px;
   width: auto;
-  height: 80%;
-  background-color: #7ba6af;
+  height: auto;
+  max-width: 80%;
+  max-height: 80%;
+  background-color: rgb(124, 107, 73);
   margin: 20px;
 }
 
-img {
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-}

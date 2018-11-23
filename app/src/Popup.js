@@ -11,6 +11,7 @@ class Popup extends React.Component {
         this.hide = this.hide.bind(this);
     }
 
+
     hide(){
         this.setState({isVisible: false});
     }
