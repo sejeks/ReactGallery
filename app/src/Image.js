@@ -7,13 +7,16 @@ class Image extends React.Component {
         super(props);
     }
 
-    render() {
+    get image() {
         return (
             <div className="images" key={"img" + this.props.index}>
                 <img src={this.props.imageUrl} onClick={() => this.props.popup.object.show(this.props.imageUrl)}/>
             </div>
-
         );
+    }
+
+    render() {
+        return this.props.imageUrl ? this.image : null;
     }
 }
 

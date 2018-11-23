@@ -44,20 +44,23 @@ code {
 }
 
 .popup {
+  background: rgba(66, 83, 90, 0.6);
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.5;
-  background-color: #7ba6af;
+  overflow: hidden;
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
 }
 
 .popup img {
   box-sizing: border-box;
   padding: 10px;
-  width: 100%;
-  height: 100%;
+  width: auto;
+  height: 80%;
   background-color: #7ba6af;
-  align-items: center;
-  display: flex;
   margin: 20px;
 }

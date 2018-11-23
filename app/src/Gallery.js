@@ -20,16 +20,14 @@ class Gallery extends React.Component {
             method: 'GET',
             dataType: 'JSONP'
         }).done((data) => {
+            console.log(data);
             let urlsArray = [];
             const dataArray = data.response.items;
             for (let i = 0; i < dataArray.length; i++){
-                urlsArray[i] = dataArray[i].photo_604;
+                urlsArray[i] = dataArray[i].photo_1280;
             }
-            console.log(urlsArray);
 
             this.setState({urls:urlsArray});
-            console.log(this.state);
-            console.log("componentDidMount 2");
         })
     }
 
