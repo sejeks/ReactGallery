@@ -29,13 +29,11 @@ code {
   box-sizing: border-box;
   border-radius: 1%;
   width: 300px;
-  height: 400px;
+  height: auto;
   background-color: rgb(24, 27, 32);
   align-items: center;
   display: flex;
   margin: 20px;
-  min-width: 300px;
-  min-height: 400px;
   cursor: pointer;
   border: solid rgb(115, 91, 43) 4px;
 }
